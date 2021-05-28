@@ -11,9 +11,6 @@
     }
     var number = parseInt(data.number);
 
-    gs.log("PS> number : " + number);
-
-    gs.log("PS> if condition 1 : " + parseFloat(data.number) + " condition 2 :" + parseFloat(data.number) % 1);
     if (parseFloat(data.number) !== 'NaN' && parseFloat(data.number) % 1 == 0) {
 
         if (number <= 0) {
@@ -24,18 +21,15 @@
         } else if (number === 2) {
             series = '0 1';
         }
-        gs.log("line 14 series : " + series);
         if (number >= '3') {
             series = '0 1';
             for (var i = 0; i < number - 2; i++) {
-                gs.log('PS> line no 18 i = ' + i + ' series : ' + series);
                 fibo3 = fibo1 + fibo2;
                 series = series + ' ' + fibo3;
                 fibo1 = fibo2;
                 fibo2 = fibo3;
             }
         }
-        gs.log("line 22 series : " + series);
         return {
             "Series": series
         };
